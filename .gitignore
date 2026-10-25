@@ -1,3 +1,13 @@
+# PS4 Save Remote local / mock
+pc/_mock_data/
+*.pkg
+pkg.gp4
+eboot.bin
+build/
+dist/
+deploy/PS4-Save-Remote-kit/
+deploy/*.zip
+
 # Prerequisites
 *.d
 
@@ -60,3 +70,7 @@ dkms.conf
 /**/sce_sys/
 /**/build/
 /**/Debug/
+
+__pycache__/
+*.pyc
+

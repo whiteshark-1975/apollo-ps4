@@ -1,0 +1,11 @@
+.git
+build
+dist
+pc/_mock_data
+*.pkg
+pkg.gp4
+eboot.bin
+docs/screenshots
+assets/misc/appdata.zip
+**/*.o
+**/__pycache__

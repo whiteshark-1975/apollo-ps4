@@ -1,0 +1,13 @@
+PS4 Save Remote
+================
+
+This project is a derivative of Apollo Save Tool (PS4) by Damian Parrino (bucanero),
+licensed under the GNU General Public License v3.0.
+
+  https://github.com/bucanero/apollo-ps4
+
+Modifications in this fork add a LAN HTTP agent API and a PC companion focused on
+save decrypt / resign for the same Account-ID. Trophy features are planned separately.
+
+If you redistribute binaries of the PS4 agent, you must also provide corresponding
+source code under GPL-3.0.

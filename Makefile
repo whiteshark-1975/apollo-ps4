@@ -1,8 +1,8 @@
 # Package metadata.
-TITLE       := Apollo Save Tool
-VERSION     := 02.40
-TITLE_ID    := APOL00004
-CONTENT_ID  := IV0000-APOL00004_00-APOLLO0000000PS4
+TITLE       := PS4 Save Remote
+VERSION     := 01.00
+TITLE_ID    := PSRM00001
+CONTENT_ID  := IV0000-PSRM00001_00-SAVEREMOTE000PS4
 
 # Libraries linked into the ELF.
 LIBS        := -lc -lkernel -lc++ -lSceAudioOut -lSceUserService -lScePigletv2VSH -lSceSysmodule -lSceFreeType -lSQLite \

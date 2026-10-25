@@ -1,0 +1,19 @@
+PS4 Save Remote — quick start
+=============================
+
+1. PS4 (jailbroken, same LAN as PC)
+   - Install:  IV0000-PSRM00001_00-SAVEREMOTE000PS4.pkg
+   - Launch:   "PS4 Save Remote"
+   - Leave it open. Note the IP in the on-screen banner / notification
+     (API port 8741).
+
+2. PC
+   - Double-click:  pc\run.bat
+   - Enter the PS4 IP → Connect / Ping
+   - Select folder:  ...\SAVEDATA\<16-hex-Account-ID>\<CUSAxxxxx>\
+   - Decrypt → edit files → Resign same Account-ID → Save sealed package
+
+Jack in → Jack out. Account-ID comes from the folder name.
+
+Docs: docs\INSTALL_CHECKLIST.md  |  docs\API.md
+GPL:  NOTICE (Apollo-derived)

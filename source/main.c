@@ -20,6 +20,7 @@
 #include "util.h"
 #include "common.h"
 #include "orbisPad.h"
+#include "ps4api.h"
 
 //Menus
 #include "menu.h"
@@ -51,7 +52,7 @@ void update_db_path(char *p);
 void update_vmc_path(char *p);
 
 app_config_t apollo_config = {
-    .app_name = "APOLLO",
+    .app_name = "PS4SR",
     .app_ver = {0},
     .save_db = ONLINE_URL,
     .ftp_url = "",
@@ -542,6 +543,7 @@ static void registerSpecialChars(void)
 static void terminate(void)
 {
 	LOG("Exiting...");
+	ps4api_stop();
 	sceAudioOutClose(audio);
 	mini18n_close();
 	terminate_jbc();
@@ -676,6 +678,12 @@ s32 main(s32 argc, const char* argv[])
 	initLocalization();
 	// Load application settings
 	load_app_settings(&apollo_config);
+
+	/* Headless LAN API for PC companion (decrypt / resign). Keep app open. */
+	if (ps4api_start())
+		notify_popup(NOTIFICATION_ICON_DEFAULT, "PS4 Save Remote\nhttp://%s:%d", ps4api_ip(), ps4api_port());
+	else
+		notify_popup(NOTIFICATION_ICON_BAN, "PS4 Save Remote API failed to start");
 
 	if (apollo_config.dbglog)
 	{

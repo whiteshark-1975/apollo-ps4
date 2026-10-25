@@ -10,6 +10,7 @@
 #include "types.h"
 #include "libfont.h"
 #include "menu.h"
+#include "ps4api.h"
 
 #include <dbglogger.h>
 #define LOG dbglogger_log
@@ -408,6 +409,23 @@ static void _draw_MainMenu(uint8_t alpha)
 
 	//------------ Icons
 	drawJars(alpha);
+
+	/* Persistent LAN API banner — headless agent is the product */
+	if (ps4api_is_running())
+	{
+		SetFontSize(APP_FONT_SIZE_SUBTITLE);
+		SetFontColor(0xE8FFE8FF, 0);
+		DrawFormatString(40, SCREEN_HEIGHT - 90, "PS4 Save Remote API  http://%s:%d", ps4api_ip(), ps4api_port());
+		SetFontColor(0xCCCCCCFF, 0);
+		DrawFormatString(40, SCREEN_HEIGHT - 55, "status: %s  |  leave app open  |  LAN only", ps4api_status());
+	}
+	else
+	{
+		SetFontSize(APP_FONT_SIZE_SUBTITLE);
+		SetFontColor(0xFFAAAAFF, 0);
+		DrawFormatString(40, SCREEN_HEIGHT - 70, "API offline — restart app after network is up");
+	}
+	(void)alpha;
 }
 
 void Draw_MainMenu_Ani(void)
